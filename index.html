@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" type="image/png" href="http://files.softicons.com/download/art-icons/modeeeern-icon-set-by-raindropmemory/ico/exdev.ico" />
+  <title>DEV</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    html, body {
+      margin: 0;
+      padding: 10px;}
+    ul {
+      list-style-type: none;
+    }
+    body {
+      background-color: #f9fafb;
+      font-family: sans-serif;
+    }
+    .header {
+      display: flex;
+    }
+    .clearfix:after, .clearfix:before {
+      content: '';
+      clear: both;
+      display: block;
+    }
+    .course-list {
+      display: flex;
+      align-items: center;
+    }
+    .logo {
+      display: inline-block;
+      float: left;
+    }
+    .course-item {
+      position: relative;
+      margin: 1%;
+      min-height: 140px;
+      border-radius: 5px;
+      box-shadow: 0 0 3px rgba(0, 0, 0, .25);
+      width: 230px;
+      list-style: none;
+      background-color: #fff;
+    }
+    .course-title {
+      color: #133b54;
+      font-size: 16px;
+      font-weight: 500;
+      padding: 10px 0;
+      position: static;
+      text-align: center;
+    }
+    .course-price {
+      font-size: 20px;
+      color: #E11030;
+      font-weight: bold;
+      vertical-align: middle;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    .course-duration {
+      border-bottom-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+      background-color: #f3f3f6;
+      margin-top: 20px;
+      padding: 10px 5px;
+      margin-bottom: 0;
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      bottom: 0;
+    }
+    .phone_mark {
+      font-size: 12px;
+      line-height: 1.42857143;
+      color: #333;
+      font-weight: bold;
+      margin: 0;
+    }
+    .phone {
+      margin: 0;
+      height: 15px;
+      line-height: 15px;
+      margin-top: 5px;
+    }
+    .phone a {
+      font-size: 20px;
+      text-decoration: none;
+      color: #333;
+      line-height: 15px;
+      font-weight: bold;
+    }
+    .phone img {
+      height: 100%;
+    }
+    .courseInfoBlock {
+      background-color: #f3f3f6;
+      overflow: hidden;
+      box-shadow: 0px 1px 4px rgba(0, 0, 0, .35);
+    }
+    .forseableCourse, .courseTimeTable {
+      width: 47%;
+      margin-left: 2%;
+      display: inline-block;
+      color: #133b54;
+      text-align: left;
+    }
+    .courseInfoBlock, .post.single-post.eveninglook {
+      width: 67%;
+      float: left;
+    }
+    .pin-wrapper {
+      float: right;
+      width: 30%;
+      margin-top: 0px;
+    }
+    .course-item {
+      transition: .2s;
+      cursor: pointer;
+    }
+    .courseSideBar {
+      text-align: center;
+      box-shadow: 0px 0px 7px rgba(0, 0, 0, .35);
+      background-color: white;
+      width: 100%;
+      max-width: 293px;
+      padding-bottom: 15px;
+    }
+    .courseSideBar .heading {
+      background-color: #F3F2F7;
+      margin: 0;
+      padding: 12px;
+      font-size: 24px;
+      color: #133b54;
+      line-height: 34px;
+    }
+    .course {
+      width: 100%;
+      background-color: white;
+      color: #E11030;
+    }
+    .sendCourseToForm {
+      height: 50px;
+      padding: 20px;
+      border-radius: 5px;
+      display: block;
+      color: white;
+      background: #3FB557;
+      text-decoration: none;
+      font-size: 16px;
+      line-height: 3;
+      padding: 0;
+      text-transform: uppercase;
+      margin: 15px auto 0;
+    }
+    .sendCourseFree, .sendCourseFree:visited, .sendCourseFree:active,   form input.sendCourseFree, form input.sendCourseFree:visited,     form input.sendCourseFree:active {
+      margin-top: 20px;
+      display: block;
+      height: 50px;
+      width: 84%;
+      margin: 15px auto;
+      border-radius: 5px;
+      font-size: 16px;
+      text-decoration: none;
+      padding: 15px 0;
+      height: 50px;
+      text-align: center;
+      display: block;
+      color: white;
+      background: #133b54;
+      position: relative;
+      text-transform: none;
+    }
+    .forseableCourse, .courseTimeTable {
+      width: 47%;
+      margin-left: 2%;
+      display: inline-block;
+      vertical-align: middle;
+      color: #133b54;
+      text-align: left;
+      padding: 5px;
+    }
+    .post {
+      background-color: white;
+      box-shadow: 0px 1px 4px rgba(0, 0, 0, .35);
+      padding: 10px 30px 30px;
+      color: #133b54;
+    }
+    .course-main-title {
+      text-align: center;
+    }
+    .container {
+      padding: 20px;
+    }
+    .course > div p:nth-child(1) {
+      color: #133b54;
+      font-weight: bold;
+      margin-bottom: 0;
+      font-size: 16px;
+    }
+    .course > div p:nth-child(2) span:nth-child(1), .course > div p:nth-child(2) span:nth-child(3) {
+      font-size: 24px;
+ 
+    }
+    .course > div p:nth-child(2) {
+      color: #E1102F;
+      font-weight: bold;
+    }
+    .courseContent h2 {
+      font-size: 20px;
+      color: #133B54;
+      margin-bottom: 20px;
+      padding: 0;
+    }
+    .post ul li {
+      margin-left: 15px;
+      font-size: 16px;
+      position: relative;
+      list-style-type: disc;
+      margin-bottom: 5px;
+    }
+    .sendCourseform input, .sendCourseFree input {
+      width: 84%;
+      border-radius: 5px;
+    }
+    #sendCourseToForm {
+      height: 50px;
+      border: 1px solid #3FB557;
+      width: 84%;
+      border-radius: 5px;
+      display: block;
+      color: white;
+      background: #3FB557;
+      text-decoration: none !important;
+      vertical-align: middle;
+      font-size: 16px;
+      line-height: 3;
+      padding: 0;
+      text-transform: uppercase;
+      margin: 15px auto 0;
+    }
+    .tabs-content-item {
+      display: none;
+    }
+    .tabs-content-item.active {
+      display: block;
+    }
+    .head-section h1 {
+      text-align: center;
+    }
+    @media screen and (max-width: 980px) {
+      .courseSideBar {
+        max-width: 230px;
+      }
+    }
+    @media screen and (max-width: 768px) {
+      .course-list {
+        flex-direction: column;
+        padding-left: 5px;
+      }
+      .course-item {
+        min-height: 100px;
+      }
+      .logo {
+        width: 200px;
+      }
+      .pin-wrapper {
+        float: none;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+      .courseSideBar {
+        max-width: none;
+      }
+      .courseInfoBlock, .post.single-post.eveninglook { 
+        float: none;
+        width: 100%;
+      }
+      .phone a {
+        font-size: 16px;
+      }
+      .courseSideBar {
+        width: 100% !important;
+      }
+      .logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .post ul li {
+        margin-left: 0;
+        padding-left: 0;
+        overflow: hidden;
+      }
+      .post {
+        padding: 10px;
+      }
+    }
+    @media screen and (max-width: 480px) {
+      .logo {
+        float: none;
+        width: auto;
+        text-align: center;
+      }
+      .logo img {
+        margin-left: 50px;
+      }
+      body, html { 
+        padding: 0;
+      }
+      .post {
+        padding: 20px;
+      }
+      .post ul {
+        padding-left: 20px;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      /* display: inline-block; */
+      position: relative;
+      font-family: Arial;
+      font-weight: bold;
+      padding: 0 0 5px 0;
+      color: #eb5055;
+    }
+
+    .effect-underline:after {
+      content: '';
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      left: 0;
+      bottom: 0;
+      visibility: hidden;
+      background-color: #eb5055;
+      -webkit-transition: all .1s ease;
+      transition: all 0.3s ease;  
+      -webkit-transform: scaleX(0);
+      -ms-transform: scaleX(0);
+      transform: scaleX(0);
+    }
+
+    .effect-underline:hover:after {
+      visibility: visible;
+      -webkit-transform: scaleX(1);
+      -ms-transform: scaleX(1);
+      transform: scaleX(1);
+    }
+
+    .effect-box:after,
+    .effect-box:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      display: inline-block;
+      height: 1em;
+      width: 100%;
+      margin-top: 10px;
+      opacity: 0;
+      -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+      transition: opacity 0.35s, transform 0.35s;
+      
+    }
+
+    .effect-box:before {
+      border-left: 1px solid;
+      border-right: 1px solid;
+      -webkit-transform: scale(1,0);
+      transform: scale(1,0);
+    }
+
+    .effect-box:after {
+      border-bottom: 1px solid;
+      border-top: 1px solid;
+      -webkit-transform: scale(0,1);
+      transform: scale(0,1);
+    }
+
+    .effect-box:hover:after,
+    .effect-box:hover:before {
+      /* opacity: 1; */
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+
+    /* effect-shine */
+    .effect-shine:hover {
+      -webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
+      -webkit-mask-size: 200%;
+      animation: shine 1s infinite;
+    }
+
+    @-webkit-keyframes shine {
+      from {
+        -webkit-mask-position: 150%;
+      }
+      
+      to {
+        -webkit-mask-position: -50%;
+      }
+    }
+
+    /* effect-buzz */
+    a.animated-button.thar-one {
+      color: #fff;
+      cursor: pointer;
+      display: block;
+      position: relative;
+      border: 2px solid #F7CA18;
+      transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+    }
+    a.animated-button.thar-one:hover {
+      color: #000 !important;
+      background-color: transparent;
+      text-shadow: none;
+    }
+    a.animated-button.thar-one:hover:before {
+      bottom: 0%;
+      top: auto;
+      height: 100%;
+    }
+    a.animated-button.thar-one:before {
+      display: block;
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      height: 0px;
+      width: 100%;
+      z-index: -1;
+      content: '';
+      color: #000 !important;
+      background: #F7CA18;
+      transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+    }
+    a.animated-button.thar-two {
+      color: #fff;
+      cursor: pointer;
+      display: block;
+      position: relative;
+      border: 2px solid #F7CA18;
+      transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+    }
+    a.animated-button.thar-two:hover {
+      color: #000 !important;
+      background-color: transparent;
+      text-shadow: ntwo;
+    }
+    a.animated-button.thar-two:hover:before {
+      top: 0%;
+      bottom: auto;
+      height: 100%;
+    }
+    a.animated-button.thar-two:before {
+      display: block;
+      position: absolute;
+      left: 0px;
+      bottom: 0px;
+      height: 0px;
+      width: 100%;
+      z-index: -1;
+      content: '';
+      color: #000 !important;
+      background: #F7CA18;
+      transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="https://pp.userapi.com/c638621/v638621840/62773/UlHnKAAoVRY.jpg?ava=1" alt="">
+      <p class="phone_mark"> По вопросам обучения&nbsp;(10:00-19:00)</p>
+      <p class="phone">
+        <a class="effect-underline" href="tel:+380734192721">
+          <img src="http://www.lansys.com.ua/wp-content/uploads/2017/10/logo-Lifecell-288x300.png">
+          +38 (073) 419-27-21
+        </a>
+      </p>
+    </div>
+    <ul class="course-list">
+      <li class="effect-shine course-item tabs-nav-item active" onclick="openmark(event, 'html-primary')">
+        <div class="course-title">HTML/CSS</div>
+        <div class="course-price"><span>2900 грн.</span></div>
+        <div class="course-duration">Длительность курса: 30 ч.</div>
+      </li>
+      <li class="effect-shine course-item tabs-nav-item" onclick="openmark(event, 'js-primary')">
+        <div class="course-title">JavaScript primary</div>
+        <div class="course-price"><span>3200 грн.</span></div>
+        <div class="course-duration">Длительность курса: 30 ч.</div>
+      </li>
+      <li class="effect-shine course-item tabs-nav-item" onclick="openmark(event, 'js-advanced')">
+        <div class="course-title">JavaScript Advanced</div>
+        <div class="course-price"><span>3500 грн.</span></div>
+        <div class="course-duration">Длительность курса: 39 ч.</div>
+      </li>
+      <li class="effect-shine course-item tabs-nav-item" onclick="openmark(event, 'js-prof')">
+        <div class="course-title">JavaScript professional</div>
+        <div class="course-price"><span>3900 грн.</span></div>
+        <div class="course-duration">Длительность курса: 24 ч.</div>
+      </li>
+    </ul>
+  </header>
+
+  <div class="content">
+    <div class="container">
+      <!-- FIRST js-primary -->
+      <div class="tabs-content-item" id="js-primary">
+        <div class="head-section">
+          <h1 class="course-main-title">JavaScript базовый курс</h1>
+        </div>
+        <div class="contForSide" class="clearfix">
+          <div class="pin-wrapper">
+            <div class="courseSideBar">
+              <p class="heading">Запись на курс</p>
+              <div class="course">
+                <div class="fullPay">
+                  <p>Единоразовая оплата</p>
+                  <p><span>3200</span> грн.</p>
+                </div>
+                <div class="partlyPay">
+                  <p>Оплата частями</p>
+                  <p><span>1750</span>грн. <span>x</span><span>2</span></p>
+                </div>
+              </div>
+              <div class="contet_box">
+              </div><span><b style="color:#E1102F;">**</b> <i>Стоимость пробного занятия 400 грн.</i></span>
+            </div>
+          </div>
+          <div class="course-info-wrapper">
+            <div class="courseInfoBlock">
+              <div class="forseableCourse">
+                <span>
+                  Длительность курса: 21 ч. </span>
+              </div>
+              <div class="courseTimeTable">
+                <p>
+                  Курс читается 2-3 раза в неделю </p>
+              </div>
+
+            </div>
+            <div class="post single-post eveninglook">
+              <div class="courseContent">
+
+                <h2>Описание курса:</h2>
+                <span>Базовый курс JavaScript позволит вам изучить JavaScript с нуля
+                  или упорядочить и дополнить уже существующие знания. </span>
+
+                <span>Уроки JavaScript для новичков посвящены фундаментальным
+                  аспектам этого языка программирования: лексическая структура, работа с переменными, типами
+                  операторов, функциями, массивами, объектами и другими разновидностями данных. </span>
+
+                <span>Часть курса направлена на обучение работе с системой контроля
+                  версий Git и практическим занятиям, благодаря чему JavaScript для начинающих станет
+                  максимально ориентированным на получение знаний, применимых в реальных проектах. </span>
+
+                <h2>После изучения курса Вы сможете:</h2>
+                <ul>
+                  <li><span>Работать с консолью
+                      разработчика и проверять код на предмет ошибок;</span></li>
+                  <li><span>Проводить различные операции
+                      с переменными, операторами, типами данных;</span></li>
+                  <li><span>Создавать приложения с
+                      помощью изученных условных и циклических конструкций;</span></li>
+                  <li><span>Более уверенно работать в
+                      команде и понимать логику рабочего процесса при разработке приложения.</span></li>
+                </ul>
+
+
+                <h2>Программа курса:</h2>
+                <ul>
+                  <li><span>Введение в Javascript</span>
+                    <ul>
+                      <li><span>Общая информация о
+                          языке и его особенности</span></li>
+                      <li><span>Справочники,
+                          спецификации и ссылки на них</span></li>
+                      <li><span>Консоль разработчика</span></li>
+                      <li><span>Внешние скрипты и
+                          порядок их подключения</span></li>
+                      <li><span>Переменные и правила
+                          их именования</span></li>
+                      <li><span>Типы данных и
+                          приведение типов</span></li>
+                    </ul>
+                  </li>
+                  <li><span>Основные операторы</span>
+                    <ul>
+                      <li><span>Операторы сравнения и
+                          логические значения</span></li>
+                      <li><span>Условные операторы</span></li>
+                      <li><span>Логические операторы</span></li>
+                      <li><span>Преобразование типов</span></li>
+                    </ul>
+                  </li>
+                  <li><span>Циклы и функции</span>
+                    <ul>
+                      <li><span>Циклы 'for', 'while',
+                          'do...while'</span></li>
+                      <li><span>Рекурсия и понятие
+                          стека</span></li>
+                      <li><span>Понятие и синтаксис
+                          функции</span></li>
+                      <li><span>Функциональные
+                          выражения</span></li>
+                      <li><span>Области видимости</span></li>
+                      <li><span>Псевдомассив
+                          'arguments'</span></li>
+                      <li><span>Функции обратного
+                          вызова (callback)</span></li>
+                    </ul>
+                  </li>
+                  <li><span>Массивы</span>
+                    <ul>
+                      <li><span>Перебирающие методы</span></li>
+                      <li><span>Внутреннее
+                          представление массивов</span></li>
+                    </ul>
+                  </li>
+                  <li><span>Объекты </span>
+                    <ul>
+                      <li><span>Передача по ссылке
+                        </span></li>
+                      <li><span>Перебор свойств</span></li>
+                      <li><span>Стандартные
+                          встроенные объекты</span></li>
+                    </ul>
+                  </li>
+                  <li><span>Работа с Git</span>
+                    <ul>
+                      <li><span>Работа с Git Bash</span></li>
+                      <li><span>Workflow от создания
+                          репозитория до его отправки на удаленный сервер</span></li>
+                      <li><span>Работа с ветками</span></li>
+                      <li><span>Работа с
+                          конфигурационными файлами</span></li>
+                    </ul>
+                  </li>
+                </ul>
+                <p></p>
+                <h2>Минимальные требования:</h2>
+                <p>
+                </p>
+                <ul>
+                  <li>Уверенное владение персональным компьютером</li>
+                  <li>Навыки работы с текстовыми редакторами</li>
+                  <li>Знание HTML, CSS</li>
+                  <li>Наличие собственного ноутбука для занятий в аудиториях</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- // FIRST - js-primary -->
+      <!-- SECOND - js-advanced -->
+      <div class="tabs-content-item" id="js-prof">
+        <div class="head-section">
+          <h1>JavaScript professional</h1>
+        </div>
+        <div id="contForSide">
+          <div class="pin-wrapper" style="height: 363px;">
+            <div class="courseSideBar" style="width: 293px;">
+              <p class="heading">Запись на курс</p>
+              <div class="course">
+                <div class="fullPay">
+                  <p>Единоразовая оплата</p>
+                  <p><span>3900</span> грн.</p>
+                </div>
+                <div class="partlyPay">
+                  <p>Оплата частями</p>
+                  <p><span>2050</span>грн. <span>x</span><span>2</span></p>
+                </div>
+              </div>
+              <div class="contet_box">
+              </div><span><b style="color:#E1102F;">**</b> <i>Стоимость пробного занятия 400 грн.</i></span>
+              <div style="height: 20px"></div>
+            </div>
+          </div>
+          <div class="courseInfoBlock">
+            <div class="forseableCourse">
+              <span>Длительность курса: 24 ч. </span>
+            </div>
+            <div class="courseTimeTable">
+              <p>Курс читается 2-3 раза в неделю </p>
+            </div>
+
+          </div>
+          <div class="post single-post clearfix eveninglook">
+            <div class="courseContent">
+              <h2>Описание курса:</h2>
+              В ходе изучения этого курса вы познакомитесь с использованием наиболее популярных шаблонов
+              проектирования. В частности будут рассмотрены MVC, MVP, MVVM и их реализация. Также вы получите
+              понимание функционирования Webpack, которое так необходимо для работы с библиотеками и
+              фреймворками. Уделим внимание наиболее актуальным концепциям разработки приложений,
+              антипаттернам и веб-компонентам.
+
+              <h2>После изучения курса Вы сможете:</h2>
+              <ul>
+                <li><span>Внедрять наиболее оптимальные
+                    подходы для решения сложных задач;</span></li>
+                <li><span>Расширить знание языка через
+                    использование новых возможностей в ES6, ES7;</span></li>
+                <li><span>Влиять на процесс оптимизации
+                    загрузки страницы и делать код читабельней;</span></li>
+                <li><span>На практике использовать
+                    шаблоны проектирования и избегать применения антипаттернов.</span></li>
+              </ul>
+              <h2>Программа курса:</h2>
+              <p>
+              </p>
+              <ul>
+                <li><span>Шаблоны проектирования</span>
+                  <ul>
+                    <li><span>Singleton</span></li>
+                    <li><span>Facade</span></li>
+                    <li><span>Mediator</span></li>
+                    <li><span>Decorator</span></li>
+                    <li><span>Prototype</span></li>
+                    <li><span>Command</span></li>
+                    <li><span>Factory</span></li>
+                    <li><span>Observer</span></li>
+                    <li><span>Mixin</span></li>
+                    <li><span>MVC/MVP/MVVM</span></li>
+                    <li><span>AMD/CommonJS</span></li>
+                  </ul>
+                </li>
+                <li><span>Антипаттерны</span></li>
+                <li><span>Webpack</span>
+                  <ul>
+                    <li><span>Общие сведения,
+                        принципы работы</span></li>
+                    <li><span>Настройка
+                        конфигурационного файла</span></li>
+                  </ul>
+                </li>
+                <li><span>ES6/ES7</span>
+                  <ul>
+                    <li><span>Переменные
+                        'let'/'const'</span></li>
+                    <li><span>Деструктуризация</span></li>
+                    <li><span>Тип данных Symbol</span></li>
+                    <li><span>Функции, строки,
+                        объекты</span></li>
+                    <li><span>Set/Map</span></li>
+                    <li><span>Promise</span></li>
+                    <li><span>Async/await</span></li>
+                  </ul>
+                </li>
+                <li><span>Веб компоненты</span>
+                  <ul>
+                    <li><span>Custom Elements</span></li>
+                    <li><span>Shadow DOM</span></li>
+                    <li><span>Шаблоны 'template'</span></li>
+                  </ul>
+                </li>
+                <li><span>Single Page Application</span>
+                  <ul>
+                    <li><span>Общие сведения,
+                        история появления</span></li>
+                    <li><span>Преимущества и
+                        недостатки</span></li>
+                  </ul>
+                </li>
+                <li><span>Typescript</span>
+                  <ul>
+                    <li><span>Введение в типы</span></li>
+                    <li><span>Компиляция</span></li>
+                    <li><span>Наследование</span></li>
+                    <li><span>Интерфейсы</span></li>
+                  </ul>
+                </li>
+              </ul>
+
+              <h2>Минимальные требования:</h2>
+              <p>
+              </p>
+              <ul>
+                <li>Наличие собственного ноутбука для занятий в аудиториях</li>
+                <li>Навыки работы с IDE</li>
+                <li>Знание основ HTML</li>
+                <li>Знание основ Javascript</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- // SECOND - js-advanced -->
+      <!-- THIRD - js-professional -->
+      <div class="tabs-content-item" id="js-advanced">
+        <div class="head-section">
+          <h1>JavaScript продвинутый курс</h1>
+        </div>
+        <div id="contForSide">
+          <div class="pin-wrapper" style="height: 363px;">
+            <div class="courseSideBar" style="width: 293px;">
+              <p class="heading">Запись на курс</p>
+              <div class="course">
+                <div class="fullPay">
+                  <p>Единоразовая оплата</p>
+                  <p><span>3500</span> грн.</p>
+                </div>
+                <div class="partlyPay">
+                  <p>Оплата частями</p>
+                  <p><span>1850</span>грн. <span>x</span><span>2</span></p>
+                </div>
+              </div>
+              <div class="contet_box">
+              </div><span><b style="color:#E1102F;">**</b> <i>Стоимость пробного занятия 400 грн.</i></span>
+              <div style="height: 20px"></div>
+            </div>
+          </div>
+          <div class="courseInfoBlock">
+            <div class="forseableCourse">
+              <span>Длительность курса: 30 ч. </span>
+            </div>
+            <div class="courseTimeTable">
+              <p>Курс читается 2-3 раза в неделю </p>
+            </div>
+          </div>
+          <div class="post single-post clearfix eveninglook">
+            <div class="courseContent">
+              <h2>Описание курса:</h2>
+              <span>Данный курс предназначен для тех, кто владеет базовыми знаниями и может
+                использовать различные языковые конструкции для решения повседневных задач.&nbsp;</span><span>В
+                ходе обучения мы познакомимся с основоположными аспектами объектно-ориентированного программирования,
+                работе с
+                событиями, протоколом HTTP и прочими важными концепциями.</span>
+
+              <span>Также будет очень много практики, а именно: разработка 8 приложений и
+                решение
+                задач, способствующих успешному прохождению собеседования.</span>
+
+              <h2>После изучения курса Вы сможете:</h2>
+              <ul>
+                <li><span>Использовать прототипно-ориентированную
+                    модель
+                    программирования;</span></li>
+                <li><span>Понимать логику работы клиент-серверной
+                    архитектуры в контексте написания реальных приложений;</span></li>
+                <li><span>Управлять DOM через использование
+                    Javascript;</span></li>
+                <li><span>Работать с локальными хранилищами данных.</span></li>
+              </ul>
+
+
+              <h2>Программа курса:</h2>
+              <p>
+              </p>
+              <ul>
+                <li><span>Прототипное наследование</span>
+                  <ul>
+                    <li><span>Прототип объекта</span></li>
+                    <li><span>Свойство prototype</span></li>
+                    <li><span>Встроенные классы</span></li>
+                    <li><span>Функция - конструктор</span></li>
+                    <li><span>Наследование классов</span></li>
+                    <li><span>Внутреннее устройство метода 'extend'
+                        и
+                        полифилл 'Object.create'</span></li>
+                    <li><span>Функциональное наследование</span></li>
+                  </ul>
+                </li>
+                <li>&nbsp;ООП
+                  <ul>
+                    <li>Общая информация про ООП</li>
+                    <li>Инкапсуляция</li>
+                    <li>Полиморфизм</li>
+                    <li>Наследование</li>
+                    <li>Абстракция данных</li>
+                    <li>Понятие 'класс'</li>
+                  </ul>
+                </li>
+                <li><span>Контекст вызова и замыкания</span>
+                  <ul>
+                    <li><span>Работа с 'this' (4 способа
+                        использования)</span></li>
+                    <li><span>Использование 'call', 'apply'</span></li>
+                    <li><span>Работа с 'bind', карринг и полифилл
+                      </span></li>
+                    <li><span>Дескрипторы, геттеры и сеттеры
+                        свойств</span></li>
+                    <li><span>Шаблон проектирования 'Singletone'
+                        через
+                        замыкание</span></li>
+                    <li><span>Сборщик мусора</span></li>
+                  </ul>
+                </li>
+                <li><span>Глобальный объект Window и работа с DOM</span>
+                  <ul>
+                    <li><span>Общая информация про 'window',
+                        'navigator',
+                        'document', 'location', 'history'</span></li>
+                    <li><span>Навигация по DOM элементам</span></li>
+                    <li><span>Свойства узлов</span></li>
+                    <li><span>Добавление и удаление узлов</span></li>
+                    <li><span>Работа со стилями</span></li>
+                    <li><span>Работа с координатами</span></li>
+                  </ul>
+                </li>
+                <li><span>События</span>
+                  <ul>
+                    <li><span>Введение в браузерные события</span></li>
+                    <li><span>Порядок обработки событий (Event
+                        Loop)</span></li>
+                    <li><span>Асинхронные события</span></li>
+                    <li><span>Работа с SetTimeout/ SetInterval</span></li>
+                    <li><span>Всплытие и перехват</span></li>
+                    <li><span>Делегирование событий</span></li>
+                    <li><span>События с использованием мыши,
+                        клавиатуры и
+                        прокрутка</span></li>
+                    <li><span>Загрузка документа</span></li>
+                  </ul>
+                </li>
+                <li><span>Формирование страницы в браузере</span>
+                  <ul>
+                    <li><span>Формирование DOM пошагово</span></li>
+                    <li><span>Формирование Render Tree</span></li>
+                    <li><span>Порядок формирования CSSOM</span></li>
+                    <li><span>Оптимизация, минификация, работа с
+                        Http
+                        Cache.</span></li>
+                  </ul>
+                </li>
+                <li><span>Способы хранения данных в браузере</span>
+                  <ul>
+                    <li><span>Cookies</span></li>
+                    <li><span>Localstorage/Sessionstorage</span></li>
+                    <li><span>IndexedDB</span></li>
+                    <li><span>Manifest</span></li>
+                    <li><span>ServiceWorker</span></li>
+                    <li><span>Progressive Web Application</span></li>
+                  </ul>
+                </li>
+                <li><span>HTTP</span>
+                  <ul>
+                    <li><span>Введение в Http протокол</span></li>
+                    <li><span>Преимущества и недостатки протокола</span></li>
+                    <li><span>Работа с AJAX</span></li>
+                    <li><span>Общая информация про RESTful API</span></li>
+                    <li><span>JSON</span></li>
+                    <li><span>CORS</span></li>
+                    <li><span>Работа с WebSocket</span></li>
+                    <li><span>Протокол JSONP</span></li>
+                  </ul>
+                </li>
+              </ul>
+              <p></p>
+              <h2>Минимальные требования:</h2>
+              <p>
+              </p>
+              <ul>
+                <li>Наличие собственного ноутбука для занятий в аудиториях</li>
+                <li>Навыки работы с IDE</li>
+                <li>Знание основ HTML</li>
+                <li>Знание основ JavaScript</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- // THIRD - js-professional -->
+      <!-- FOURTH html/css -->
+      <div class="tabs-content-item active" id="html-primary">
+        <div class="head-section">
+          <h1>Курс HTML &amp; CSS</h1>
+        </div>
+        <div id="contForSide">
+          <div class="pin-wrapper" style="height: 440px;">
+            <div class="courseSideBar">
+              <p class="heading">Запись на курс</p>
+              <div class="course">
+                <div class="discontsCourse">Скидка 20% *</div>
+                <div class="fullPay">
+                  <p>Единоразовая оплата</p>
+                  <p><span>2900</span> грн.</p>
+                </div>
+                <div class="partlyPay">
+                  <p>Оплата частями</p>
+                  <p><span>1550</span>грн. <span>x</span><span>2</span></p>
+                </div>
+              </div>
+              <div class="contet_box">
+              </div><span><b style="color:#E1102F;">**</b> <i>Стоимость пробного занятия 400 грн.</i></span>
+              <div style="height: 20px"></div>
+            </div>
+          </div>
+          <div class="courseInfoBlock">
+            <div class="forseableCourse">
+              <span>Длительность курса: 30 ч. </span>
+            </div>
+            <div class="courseTimeTable">
+              <p>Курс читается 2-3 раза в неделю </p>
+            </div>
+          </div>
+          <div class="post single-post clearfix eveninglook">
+            <div class="courseContent">
+
+              <h2>Описание курса:</h2>
+              <span>Курс HTML/CSS — &nbsp;это обучение работе с языком разметки веб-страниц.
+                Программа предназначена для новичков, которые желают изучить основы работы с front-end разработкой.
+              </span>
+
+              <span>На курсе вы сможете освоить </span><span>HTML</span><span
+               > с нуля: ознакомиться с теоретическими основами верстки и структурой HTML
+                документа,
+                порядком публикации документов в web и сможете создавать полноценные страницы. HTML для начинающих
+                является
+                базисом для веб-разработчиков, а после его изучения уже можно начинать работать над реальными
+                проектами. </span><span>Уже первый урок даст возможность попрактиковаться в
+                создании несложных HTML-страниц,
+                работе с мультимедиа и таблицами стилей CSS.</span>
+
+              <h2>После изучения курса Вы сможете:</h2>
+              <ul>
+                <li><span>Создавать веб страницы;</span></li>
+                <li><span>Наполнять их содержимым (текстом,
+                    ссылками,спецсимволами, изображениями, фонами, подключать иконочные и обычные шрифты и тд );</span></li>
+                <li><span>Добавлять стили всем элементам веб
+                    страницы;</span></li>
+                <li><span>Выгружать сайты на хостинг;</span></li>
+                <li><span>Понимать и разбираться в адаптивной,
+                    кроссбраузерной, попиксельной, резиновой, cмешаной и статичной верстками;</span></li>
+                <li><span>Работать с WORDPRESS (Создавать и
+                    подключать базу
+                    данных к WP, загружать темы и работать с плагинами);</span></li>
+                <li><span>Сверстать одностраничный сайт и выгрузить
+                    его на
+                    хостинг для общего доступа пользователей по ссылке.</span></li>
+              </ul>
+
+
+              <h2>Программа курса:</h2>
+              <p>
+              </p>
+              <ul>
+                <li><span>Ввод в веб-технологии</span>
+                  <ul>
+                    <li><span>Предназначение технологий;</span></li>
+                    <li><span>Стек разработки для сайта;</span></li>
+                    <li><span>Принцип работы ‘клиент-сервер’;</span></li>
+                    <li><span>Консоль разработчика;</span></li>
+                    <li><span>Текстовый редактор и IDE;</span></li>
+                    <li><span>Что такое HTML&amp;CSS&amp;JS и их
+                        взаимодействие; </span></li>
+                  </ul>
+                </li>
+              </ul>
+              <ul>
+                <li><span>HTML</span>
+                  <ul>
+                    <li><span>Базовые принципы верстки;</span></li>
+                    <li><span>Знакомство с понятием тега и
+                        атрибута;</span></li>
+                    <li><span>Обязательная структура любой
+                        веб-страницы;</span></li>
+                    <li><span>Понятия строчных и блочных элементов
+                        веб
+                        страницы;</span></li>
+                    <li><span>Понятия парных и непарных тегов;</span></li>
+                    <li><span>Семантические теги;</span></li>
+                    <li><span>Спецсимволы;</span></li>
+                    <li><span>Работа с тегами и атрибутами;</span></li>
+                    <li><span>Работа с ссылками и якорями;</span></li>
+                    <li><span>Работа с текстом и комментариями;</span></li>
+                    <li><span>Работа с различными системами цветов
+                        в HTML;</span></li>
+                    <li><span>Работа с изображениями;</span></li>
+                    <li><span>Нумерованные и маркированные списки;</span></li>
+                    <li><span>Работа с блоками(div);</span></li>
+                    <li><span>Таблицы;</span></li>
+                    <li><span>Формы;</span></li>
+                    <li><span>Элементы форм(инпуты);</span></li>
+                    <li><span>Айфреймы;</span></li>
+                    <li><span>Подключение разных модулей к
+                        документу HTML;</span></li>
+                    <li><span>Форматирование элементов HTML;</span></li>
+                  </ul>
+                </li>
+              </ul>
+              <ul>
+                <li><span>Работа с браузером</span>
+                  <ul>
+                    <li><span>Установка полезных расширений для
+                        верстки;</span></li>
+                    <li><span>Отладчик кода;</span></li>
+                  </ul>
+                </li>
+                <li><span>Хостинговые и доменные панели;</span></li>
+                <li><span>Файловый менеджер(Filezilla);</span></li>
+                <li><span>CSS</span>
+                  <ul>
+                    <li><span>Что такое CSS;</span></li>
+                    <li><span>Базовые принципы написания стилей;</span></li>
+                    <li><span>3 способа добавления CSS на HTML
+                        страницу;</span></li>
+                    <li><span>Внешние таблицы стилей;</span></li>
+                    <li><span>Относительные и статичные единицы
+                        измерения;</span></li>
+                    <li><span>Работа со шрифтами (семейства, стили,
+                        размеры, насыщенность)</span></li>
+                    <li><span>Работа с границами элементов (бордер
+                        радиус,
+                        тени);</span></li>
+                    <li><span>Работа с отступами и размерами
+                        элементов;</span></li>
+                    <li><span>Градиенты;</span></li>
+                    <li><span>Работа со свойствами float и clear;</span></li>
+                    <li><span>Flex box;</span></li>
+                    <li><span>Работа с фоном (изображения и цвет,
+                        размеры,
+                        прозрачность);</span></li>
+                    <li><span>Селекторы;</span></li>
+                    <li><span>Продвинутые селекторы;</span></li>
+                    <li><span>Приоритеты стилей;</span></li>
+                    <li><span>Перезапись стилей;</span></li>
+                    <li><span>Псевдоклассы, псевдоэлементы;</span></li>
+                    <li><span>Работа с анимацией элементов;</span></li>
+                    <li><span>Валидация;</span></li>
+                    <li><span>Медиазапросы;</span></li>
+                  </ul>
+                </li>
+              </ul>
+              <ul>
+                <li><span>Адаптивная верстка;</span></li>
+                <li><span>Резиновая верстка;</span></li>
+                <li><span>Пиксель перфектная верстка;</span></li>
+                <li><span>Статичная верстка;</span></li>
+                <li><span>Кроссбраузерная верстка;</span></li>
+                <li><span>Смешанная верстка ;</span></li>
+                <li><span>Фотошоп для разработчика</span>
+                  <ul>
+                    <li><span>Нарезка макета;</span></li>
+                    <li><span>Основные инструменты;</span></li>
+                    <li><span>Понятия сетки;</span></li>
+                  </ul>
+                </li>
+              </ul>
+              <ul>
+                <li><span>CMS Wordpress создание и подключение базы
+                    данных;</span>
+                  <ul>
+                    <li><span>Настройка тем;</span></li>
+                    <li><span>Настройка плагинов;</span></li>
+                    <li><span>Настройка меню;</span></li>
+                    <li><span>Выгрузка на сервер;</span></li>
+                  </ul>
+                </li>
+              </ul>
+              <ul>
+                <li><span>Правила именования классов по BEM;</span></li>
+                <li><span>Библиотека Bootstrap;</span></li>
+                <li><span>Основы препроцессора Less;</span></li>
+              </ul>
+              <p></p>
+              <h2>Минимальные требования:</h2>
+              <p>
+              </p>
+              <ul>
+                <li>Наличие собственного ноутбука для занятий в аудиториях</li>
+                <li><span>Установленные&nbsp;Sublime Text, Photoshop&nbsp;и файловый менеджер
+                    (например, filezilla)</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- // FOURTH html/css -->
+    </div>
+  </div>
+
+  <script>
+    function openmark(evt, mark) {
+        window.scrollTo(0, 0);
+
+        let nav = document.getElementsByClassName('tabs-nav-item'),
+          content = document.getElementsByClassName('tabs-content-item');
+
+        for (let i = 0; i < nav.length; i++) {
+          nav[i].className = nav[i].className.replace(' active', '');
+          content[i].className = content[i].className.replace(' active', '');
+        };
+
+        evt.currentTarget.className += ' active';
+        document.getElementById(mark).className += ' active';
+      };
+  </script>
+</body>
+
+</html>
